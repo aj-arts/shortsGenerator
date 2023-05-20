@@ -1,5 +1,9 @@
 # **Shorts Generator**
 
+This tool will automatically generate short form content in the form of text-based stories spoken over stimulating background videos.
+
+[Example](https://www.tiktok.com/@reddit.said/video/7235313598632054062)
+
 ## Installation Instructions
 
 ```
@@ -11,6 +15,8 @@ cd shortsGenerator
 ```
 pip install -r requirements.txt
 ```
+
+---
 
 ## Usage
 
@@ -37,7 +43,7 @@ if 'showingResultsForRenderer' in video_details:
 To use the tool run the command
 
 ```
-python UR_MOM.py
+python generator.py
 ```
 
 <br>
@@ -52,10 +58,12 @@ OR
 
     short nature background video relaxing
 
+---
+
 ## Future improvements
 
-* Work towards integration with multiple media platforms
-* Provide more customizability
+- [ ] Work towards integration with multiple media platforms
+- [ ] Provide more customizability for video options
 
 ---
 
