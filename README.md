@@ -2,11 +2,15 @@
 
 ## Installation Instructions
 
-`git clone https://github.com/aj-arts/shortsGenerator.git`
-
-`cd shortsGenerator`
-
-`pip install -r requirements.txt`
+```
+git clone https://github.com/aj-arts/shortsGenerator.git
+```
+```
+cd shortsGenerator
+```
+```
+pip install -r requirements.txt
+```
 
 ## Usage
 
@@ -32,7 +36,9 @@ if 'showingResultsForRenderer' in video_details:
 
 To use the tool run the command
 
-`python UR_MOM.py` 
+```
+python UR_MOM.py
+```
 
 <br>
 
