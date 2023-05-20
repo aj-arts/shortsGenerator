@@ -4,7 +4,7 @@ from gtts import gTTS
   
 # This module is imported so that we can 
 # play the converted audio
-import os
+
 import os
 # The text that you want to convert to audio
 mytext = 'This is test text and will be Sarveshs string.'
@@ -39,16 +39,11 @@ counter += 1
 with open(counter_file, 'w') as file:
     file.write(str(counter))
 
-# Print the updated counter value
-print(f"Counter: {counter}")
-
 
 # Saving the converted audio in a mp3 file named
 # welcome 
 
 myobj.save(f"Audio File{counter}.mp3")
-  
-
 
 # Playing the converted file
 os.system("mpg321 welcome.mp3")
