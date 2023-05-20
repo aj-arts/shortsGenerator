@@ -36,3 +36,12 @@ texts.insert(0,clip)
 CompositeVideoClip(texts).write_videofile(f'./captionedVideos/{filename}', codec='libx264', fps=24)
 # print(TextClip.search('Bold','font'))
 # print(TextClip.list('color'))
+
+def captionedVideo(clipPath, captionString, audioPath):
+    clip = VideoFileClip(clipPath)
+    audio = AudioFileClip(audioPath)
+    audioDuration = int(audio.duration)
+    clip = clip.subclip(0, audioDuration)
+    if(clip.w > clip.h):
+        clip = clip.crop(x_center=clip.w/2, y_center=clip.h/2, width=(clip.h) * 9/16, height=clip.h)
+    
