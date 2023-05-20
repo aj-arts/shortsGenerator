@@ -6,7 +6,11 @@ partitions = 4
 captionString = "Richard Feynman said, “Never confuse education with intelligence, you can have a PhD and still be an idiot.” What are some real life examples of this? My professor, a brilliant neurosurgeon, once decided to directly smell a bottle of ammonia. He then told me “don't smell that”. I did not plan to! Me. Masters in cybersecurity and can't help my 5th grader with his math homework. My ex wife with a PhD in neuroscience driving my car around with the handbrake on calling me to ask about the noise and smell. I had a professor for higher mathematics who had real difficulties figuring out how to extract a cup of coffee from the vending machine. Bless him. I work with medical doctors all the time for work. Doctors are some of the dumbest smart people I have ever met."
 
 clip = VideoFileClip(f'rawVideos/{filename}')
-print(clip)
+clip = clip.subclip(0, audioDuration)
+clip = clip.crop(x_center=clip.w/2, y_center=clip.h/2, width=(clip.h) * 9/16, height=clip.h)
+
+#save the clip
+clip.write_videofile(f'captionedVideos/{filename}', codec='libx264')
 
 # print the caption string into 4 parts
 
