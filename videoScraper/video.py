@@ -1,21 +1,66 @@
 from pytube import Search
+from datetime import datetime
 
 ## Written by: Colin Pannikkat
 
 class Video:
+    '''
+    Video scraper using PyTube to download desired background videos from YouTube
+
+    Attributes
+    ----------
+        videoType (str): type of video to search for
+        usedVideos (str): file containing used videos
+        search (Search): search object from pytube
+            access search results with search.results
+        tries (int): number of tries to find video
+        now (datetime): current date and time
+        datetimestr (str): current date and time as string
+        filename (str): filename of video
+
+    Usage
+    -------
+        video = Video(videoType)
+            Initialize video object
+        video.saveVideo()
+            Finds and saves video with type requirements to rawVideos folder
+    '''
 
     def __init__ (self, videoType):
+        '''
+        Initialize video object
+
+        Parameters
+        ----------
+            videoType (str): type of video to search for
+        
+        Raises
+        ------
+            Exception: No video type specified
+        '''        
+
+        if self.videoType == None:
+            raise Exception("No video type specified")
         
         self.videoType = videoType
         self.usedVideos = "./videoScraper/used_videos.txt" # file containing used videos
         self.search = Search(self.videoType) # search youtube for video type
         self.tries = 0 # number of tries to find video
+        self.now = datetime.now()
+        self.datetimestr = self.now.strftime("%m-%d-%H:%M")
+        self.filename = None
 
-    # tries and find video within length requirements
     def saveVideo(self):
-        
-        # check if video has already been used
+        '''
+        Finds video within video type and length requirements 
+        and saves video to rawVideos folder
+        '''
+
         def checkVideo():
+            '''
+            Checks if video has already been used
+            '''
+
             usedVideos = open(self.usedVideos, 'r')
             if videoTitle in usedVideos.read():
                 return True
@@ -30,8 +75,14 @@ class Video:
                 # if video has not been used, download it    
                 try:
                     print("Downloading video...")
-                    i.streams.filter(file_extension='mp4', res='720p').first().download(output_path="./rawVideos/")
-                    print("Video downloaded successfully!")
+                    try:
+                        videoType = self.videoType.replace(" ", "_") # replace spaces with underscores
+                        self.filename = str(f"{videoType}_{self.datetimestr}.mp4") # create filename
+                        i.streams.filter(file_extension='mp4', res='720p').first().download(filename=self.filename, output_path="./rawVideos/")
+                    except Exception as e:
+                        print(str(e))
+                    else:   
+                        print("Video downloaded successfully!")
                     # write video to used videos file
                     usedVideos = open(self.usedVideos, mode="a")
                     usedVideos.write(i.title + "\n")
