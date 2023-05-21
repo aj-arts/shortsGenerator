@@ -78,7 +78,7 @@ class Video:
                     print("Downloading video...")
                     try:
                         videoType = self.videoType.replace(" ", "_") # replace spaces with underscores
-                        self.filename = str(f"{videoType}_{self.datetimestr}.mp4") # create filename
+                        self.filename = "backgroundvideo.mp4"
                         i.streams.filter(file_extension='mp4', res='720p').first().download(filename=self.filename, output_path="./video/rawVideos/")
                     except Exception as e:
                         raise e
