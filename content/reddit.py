@@ -21,7 +21,7 @@ def main():
   #Search for SFW post with content <1 words which hasn't been generated before
   for post in top_posts:
     if (len(post.selftext.split()) <= 1 and post.over_18  == False and not(search_string_in_file("content/blacklist_links.txt",post.permalink))):
-      print("Found post: " + post.title)
+      print("Found post: " + post.title + "\nLooking for comments. This may take a while.")
       add_string_to_file("content/blacklist_links.txt",post.permalink)
 
       content = post.title + "\n"
