@@ -163,6 +163,6 @@ cython_debug/
 .DS_Store
 
 # ignore files
-video/captionedVideos/*.mp4
-video/rawVideos/*.mp4
-audio/audioFiles/*.mp3
+video/*.mp4
+video/*.mp4
+audio/*.mp3
