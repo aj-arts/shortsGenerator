@@ -47,11 +47,11 @@ def main():
     #Get top posts
     top_posts = reddit.subreddit(sub_name).top(limit=10000)
 
-    #Search for SFW post with size > 50 and < 100 words which hasn't been generated before
+    #Search for SFW post with size > 50 and < 150 words which hasn't been generated before
     print("Tring to find a suitable post from " + sub_name)
     for post in top_posts:
       content = post.title + "\n\n" + post.selftext
-      if (len(content.split()) <= 100 and len(post.selftext.split()) >= 50 and post.over_18  == False and not(search_string_in_file("content/blacklist_links.txt",post.permalink))):
+      if (len(content.split()) <= 150 and len(post.selftext.split()) >= 50 and post.over_18  == False and not(search_string_in_file("content/blacklist_links.txt",post.permalink))):
 
         add_string_to_file("content/blacklist_links.txt",post.permalink)
         return content
