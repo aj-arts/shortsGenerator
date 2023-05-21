@@ -86,7 +86,7 @@ class Video:
                     try:
                         videoType = self.videoType.replace(" ", "_") # replace spaces with underscores
                         self.filename = "backgroundvideo.mp4"
-                        i.streams.filter(file_extension='mp4', res='720p').first().download(filename=self.filename, output_path="./video/")
+                        i.streams.filter(file_extension='mp4', res='1080p').first().download(filename=self.filename, output_path="./video/")
                     except Exception as e:
                         raise e
                     else:   

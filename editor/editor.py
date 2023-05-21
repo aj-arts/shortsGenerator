@@ -9,15 +9,19 @@ def textClipArray(captionString, partitions, audioDuration, width, height):
             TextClip(
             captionString[i*len(captionString)//partitions:(i+1)*len(captionString)//partitions], 
             color='white',
-            # stroke_color='white',
-            # stroke_width=clip.h * 0.02 * 0.005,
+            stroke_color='black',
+            stroke_width=height * 0.02 * 0.06,
             method='caption',
             size=(width * 0.9,None),
             align='center',
             font='Verdana-Bold',
-            fontsize=height * 0.025,
+            fontsize=height * 0.03,
             bg_color='transparent',
-            ).on_color(color=(0,0,0), col_opacity=0.8).set_duration(audioDuration/partitions).set_start(i*audioDuration/partitions).set_pos((0.05,0.15), relative=True))
+            )
+            .on_color(color=(0,0,0), col_opacity=0.8)
+            .set_duration(audioDuration/partitions)
+            .set_start(i*audioDuration/partitions)
+            .set_pos((0.05,0.15), relative=True))
     return textClipArray
 
 def captionedVideo(clipPath, captionString, audioPath):
@@ -27,7 +31,7 @@ def captionedVideo(clipPath, captionString, audioPath):
     clip = clip.subclip(0, audioDuration)
     if(clip.w > clip.h):
         clip = clip.crop(x_center=clip.w/2, y_center=clip.h/2, width=(clip.h) * 9/16, height=clip.h)
-    partitions = 8
+    partitions = audioDuration//5
     texts = textClipArray(captionString, partitions, audioDuration, clip.w, clip.h)
     texts.insert(0,clip)
     clip.audio = audio
