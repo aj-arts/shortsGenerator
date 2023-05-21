@@ -6,9 +6,9 @@ from contextlib import closing
 def main():
   #Create reddit instance
   reddit = praw.Reddit(
-  client_id="6jpje8RvIVVjqVkH4tq5-w", 
-  client_secret="yWhYEvdR71pdkGOwl6WG5RJadNsBsw", 
-  user_agent="NotAbot",)
+  client_id=os.environ["REDDIT_CLIENT_ID"], 
+  client_secret=os.environ["REDDIT_CLIENT_SECRET"], 
+  user_agent=os.environ["REDDIT_USER_AGENT"],)
 
   #Get a list of subreddit and choose a random subreddit
   subs = read_subreddit_file("./reddit/subreddit.txt")
