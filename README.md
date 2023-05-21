@@ -16,29 +16,14 @@ cd shortsGenerator
 pip install -r requirements.txt
 ```
 
+### To use captions on videos with MoviePy, you **must** download a program called ImageMagick
+
+You can find the download links for Linux, Mac, and Windows [here](https://www.imagemagick.org/script/download.php)
+
 ---
 
 ## Usage
 
-You may come across an error such as 
-
-```
-Unexpected renderer encountered.
-Renderer name: dict_keys(['reelShelfRenderer'])
-Search term: ur mom
-Please open an issue at https://github.com/pytube/pytube/issues and provide this log output.
-```
-
-This is an issue with pytube and hopefully will be resolved soon. If you wish to mute the issue temporarily go into your python packages and navigate to 
-'pytube/contrib/search.py' and add after line 150
-
-```
-if 'reelShelfRenderer' in video_details:
-    continue
-            
-if 'showingResultsForRenderer' in video_details:
-    continue
-```
 
 To use the tool run the command
 
@@ -46,7 +31,6 @@ To use the tool run the command
 python generator.py
 ```
 
-<br>
 
 **BE SPECIFIC WHEN PROMPTED FOR VIDEO BACKGROUND**
 
@@ -60,19 +44,45 @@ OR
 
 ---
 
-## Future improvements
+You may come across an error such as 
 
-- [ ] Work towards integration with multiple media platforms
-- [ ] Provide more customizability for video options
+```
+Unexpected renderer encountered.
+Renderer name: dict_keys(['reelShelfRenderer'])
+Search term: tetris
+Please open an issue at https://github.com/pytube/pytube/issues and provide this log output.
+```
+
+This is an issue with pytube and hopefully will be resolved soon. If you wish to mute the issue temporarily go into your python packages and navigate to 
+'pytube/contrib/search.py' and after line 150 add
+
+```
+if 'reelShelfRenderer' in video_details:
+    continue
+            
+if 'showingResultsForRenderer' in video_details:
+    continue
+```
 
 ---
 
-### Written by:
+## Future improvements
+
+- [ ] Prevent words from splitting in captions
+- [ ] Work towards integration with multiple media platforms
+- [ ] Provide more customizability for video options
+- [ ] Improve TTS engine to be more realistic
+
+---
+
+## Written by:
 Sarvesh Thiruppathi - text scraping
 
-Ajinkya Gokule - video processing and text
+Ajinkya Gokule - video processing and captioning
 
 David Gesl - text to speech
 
-Colin Pannikkat - video scraping
+Colin Pannikkat - video scraping, documentation
 
+---
+Copyright (c) 2023 Colin Pannikkat, Ajinkya Gokule, Sarvesh Thiruppathi, David Gesl
