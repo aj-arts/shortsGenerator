@@ -164,6 +164,6 @@ cython_debug/
 .DS_Store
 .DS_Store
 
-./video/captionedVideos/
-./video/rawVideos/
-./audio/audioFiles/
+video/captionedVideos/*.mp4
+video/rawVideos/*.mp4
+audio/audioFiles/*.mp3
