@@ -16,9 +16,7 @@ class Video:
         search (Search): search object from pytube
             access search results with search.results
         tries (int): number of tries to find video
-        now (datetime): current date and time
-        datetimestr (str): current date and time as string
-        filename (str): filename of video
+        filename (str): filename of downloaded video
 
     Usage
     -------
@@ -47,9 +45,7 @@ class Video:
         self.usedVideos = "./video/used_videos.txt" # file containing used videos
         self.search = Search(self.videoType) # search youtube for video type
         self.tries = 0 # number of tries to find video
-        self.now = datetime.now()
-        self.datetimestr = self.now.strftime("%m-%d-%H:%M")
-        self.filename = None
+        self.filename = "backgroundvideo.mp4"
 
     def saveVideo(self, captionLength):
         '''
@@ -67,6 +63,8 @@ class Video:
         def checkVideo():
             '''
             Checks if video has already been used
+
+            Returns true if video has been used, false otherwise
             '''
 
             usedVideos = open(self.usedVideos, 'r')
@@ -84,8 +82,6 @@ class Video:
                 try:
                     print("Downloading video...")
                     try:
-                        videoType = self.videoType.replace(" ", "_") # replace spaces with underscores
-                        self.filename = "backgroundvideo.mp4"
                         i.streams.filter(file_extension='mp4', res='720p').first().download(filename=self.filename, output_path="./video/")
                     except Exception as e:
                         raise e
@@ -107,4 +103,5 @@ class Video:
         if self.tries == 10:
             print("No video's found in lookup after 10 tries, exiting...")
             return
-        self.saveVideo(captionLength)
+        else:
+            self.saveVideo(captionLength)
