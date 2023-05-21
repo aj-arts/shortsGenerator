@@ -24,7 +24,8 @@ def main():
     elif userChoice == "2": 
         prompt = input("Enter a prompt for chatGPT: ")
         captionString = generate_req(prompt, 500)
-        captionLength = len(captionString)
+        
+    captionLength = len(captionString)
 
     # get video type from user
     videoType = input("Enter desired background video type: ")

@@ -63,7 +63,6 @@ class Video:
 
         self.captionLength = captionLength
         captionTime = self.captionLength/11.75 # convert caption length (in chars) to seconds
-        print(captionTime)
 
         def checkVideo():
             '''
