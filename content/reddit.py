@@ -11,7 +11,7 @@ def main():
   user_agent=os.environ["REDDIT_USER_AGENT"],)
 
   #Get a list of subreddit and choose a random subreddit
-  subs = read_subreddit_file("./reddit/subreddit.txt")
+  subs = read_subreddit_file("content/subreddit.txt")
   sub_name = subs[random.randint(0,len(subs)-1)]
 
   #Get top posts
@@ -20,9 +20,9 @@ def main():
   print("Searching for post in r/" + sub_name + "...")
   #Search for SFW post with content <1 words which hasn't been generated before
   for post in top_posts:
-    if (len(post.selftext.split()) <= 1 and post.over_18  == False and not(search_string_in_file("./reddit/blacklist_links.txt",post.permalink))):
+    if (len(post.selftext.split()) <= 1 and post.over_18  == False and not(search_string_in_file("content/blacklist_links.txt",post.permalink))):
       print("Found post: " + post.title)
-      add_string_to_file("./reddit/blacklist_links.txt",post.permalink)
+      add_string_to_file("content/blacklist_links.txt",post.permalink)
 
       content = post.title + "\n"
 
