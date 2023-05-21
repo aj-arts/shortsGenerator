@@ -6,6 +6,11 @@ from editor import captionedVideo
 from audio import textToSpeech
 
 def main():
+    print("\n\t\t\tWelcome to Shorts Generator!"
+          "\n\tThis program will generate a short video with a story of your choice."
+          "\n-------------------------------------------------------------------------------------"
+          "\nCopyright (c) 2023 Colin Pannikkat, Ajinkya Gokule, Sarvesh Thiruppathi, David Gesl"
+          "\n-------------------------------------------------------------------------------------\n")
     # get video type from user
     videoType = input("Enter desired background video type: ")
     video = Video(videoType)
@@ -18,7 +23,7 @@ def main():
     audioFile = textToSpeech(captionString)
 
     # apply caption to video
-    inputVideo = video.filename
+    inputVideo = "rawVideos/" + video.filename
     savedVideo = captionedVideo(inputVideo, captionString, audioFile)
 
     print("Video saved as:", savedVideo, "in captionVideos folder")
