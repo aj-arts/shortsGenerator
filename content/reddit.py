@@ -2,6 +2,8 @@ import praw
 import os
 import random
 from contextlib import closing
+from dotenv import load_dotenv
+load_dotenv()
 
 def main():
   #Create reddit instance
