@@ -36,7 +36,7 @@ def main():
     audioFile = textToSpeech(captionString)
 
     # apply caption to video
-    inputVideo = "./video/rawVideos/" + video.filename
+    inputVideo = "./video/" + video.filename
     savedVideo = captionedVideo(inputVideo, captionString, audioFile)
 
     print("Video saved at:", savedVideo)
