@@ -3,9 +3,11 @@ import requests
 from dotenv import load_dotenv
 load_dotenv()
 
-#Function to generate a chat GPT Response. Requires prompt and number of tokens to use. Suggestion: 200 for 150 words or less.
-
 def generate_req(prompt,tokens):
+    '''
+    Function to generate a chat GPT Response. Requires prompt and number of tokens to use. Suggestion: 200 for 150 words or less.
+    '''
+    
     url = 'https://api.openai.com/v1/chat/completions'
     headers = {
         'Content-Type': 'application/json',
