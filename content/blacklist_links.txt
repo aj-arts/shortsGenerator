@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /r/AskReddit/comments/gajxc/today_is_my_birthday_i_turned_25_all_i_want_for/
 /r/AskReddit/comments/11wl1l/were_back_what_did_you_do_during_the_great_outage/
 /r/AskReddit/comments/ablzuq/people_who_havent_pooped_in_2019_yet_why_are_you/
@@ -33,3 +34,5 @@
 /r/AskReddit/comments/13gfqya/what_annoys_the_fuck_out_of_you/
 /r/AskReddit/comments/1315mbi/whats_the_best_mindfuck_movie/
 /r/AskReddit/comments/13bt91m/what_is_just_not_the_flex_that_people_think_it_is/
+=======
+>>>>>>> 68ec903ad733a6b08faecf31b458cb5f6aa60650
