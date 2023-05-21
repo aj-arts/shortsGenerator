@@ -25,3 +25,5 @@ def generate_req(prompt,tokens):
     print("Used Tokens: " + str(response_data['usage']['total_tokens']))
     story = response_data['choices'][0]['message']['content']
     return story
+
+# print(generate_req("Write a funny short story about joe biden and donald trump in 120 words or less.", 400))

@@ -2,7 +2,7 @@
 # Shorts Generator
 
 from video.video import Video
-from editor.editor import captionedVideo
+from editor.editor import captionedVideo, generate_video
 from audio.audio import textToSpeech
 from content.chatGPT import generate_req
 import content.reddit as reddit
@@ -35,11 +35,11 @@ def main():
     video.saveVideo(captionLength)
 
     # get autio file
-    audioFile = textToSpeech(captionString)
+    # audioFile = textToSpeech(captionString)
 
     # apply caption to video
     inputVideo = "./video/" + video.filename
-    savedVideo = captionedVideo(inputVideo, captionString, audioFile)
+    savedVideo = generate_video(inputVideo, captionString)
 
     print("Video saved at:", savedVideo)
 
