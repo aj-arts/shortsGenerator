@@ -37,8 +37,7 @@ def main():
               if(length <= 130):
                 content += "\n\n" + comment.body
                 
-      print(content)
-      return
+      return content
 
 #Function to add a string to a file
 def add_string_to_file(filename, content):
