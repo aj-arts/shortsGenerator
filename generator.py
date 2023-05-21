@@ -2,7 +2,7 @@
 # Shorts Generator
 
 from video.video import Video
-from editor.editor import captionedVideo, generate_video
+from editor.editor import generate_video
 from audio.audio import textToSpeech
 from content.chatGPT import generate_req
 from content.reddit import main as reddit
@@ -25,7 +25,7 @@ def main():
     while(userChoice != "1" and userChoice != "2" and userChoice != "3"):
         userChoice = input("Invalid input. Please try again: ")
     if userChoice == "1":
-        captionString = reddit.main()
+        captionString = reddit()
     elif userChoice == "2": 
         prompt = input("Enter a prompt for chatGPT: ")
         captionString = generate_req(prompt, 500)
@@ -35,7 +35,7 @@ def main():
                    "Generate a random story under 150 words", #2
                    "Explain some mathematical concept under 150 words"] #3
         captionString = generate_req(prompts[randrange(0,3)], 200) # randomly generates a reddit story
-        video = Video("short gameplay footage for tiktok video") # looks for general background video
+        video = Video("background gameplay video") # looks for general background video
         video.saveVideo(len(captionString)) # scrapes video from youtube
         inputVideo = "./video/" + video.filename # gets video path
         savedVideo = generate_video(inputVideo, captionString) # applies caption to video
