@@ -166,4 +166,3 @@ cython_debug/
 video/*.mp4
 video/backgroundvideo.mp4
 audio/*.mp3
-backgroundvideo.mp4
