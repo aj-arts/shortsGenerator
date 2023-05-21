@@ -168,3 +168,4 @@ video/captionedVideos/
 video/rawVideos/
 
 audio/audioFiles/
+.DS_Store

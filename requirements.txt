@@ -8,3 +8,4 @@ tzdata==2023.3
 moviepy==1.0.3
 praw==7.7.0
 gTTS==2.2.3
+pytube==15.0.0
