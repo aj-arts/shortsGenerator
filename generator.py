@@ -5,7 +5,7 @@ from video.video import Video
 from editor.editor import captionedVideo, generate_video
 from audio.audio import textToSpeech
 from content.chatGPT import generate_req
-import content.reddit as reddit
+from content.reddit import main as reddit
 import os
 from random import randrange
 
