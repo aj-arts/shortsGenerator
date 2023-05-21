@@ -4,6 +4,7 @@
 from video.video import Video
 from editor.editor import captionedVideo
 from audio.audio import textToSpeech
+from chatGPT import generate_req
 import reddit.reddit as reddit
 import os
 
@@ -14,13 +15,22 @@ def main():
           "\n-------------------------------------------------------------------------------------"
           "\nCopyright (c) 2023 Colin Pannikkat, Ajinkya Gokule, Sarvesh Thiruppathi, David Gesl"
           "\n-------------------------------------------------------------------------------------\n")
+    
+    # get caption string
+    print("Choose whether to get a random story from AskReddit or generate a story with chatGPT.")
+    userChoice = input("Enter 1 for AskReddit or 2 for chatGPT: ")
+    if userChoice == "1":
+        captionString = reddit.main()
+    elif userChoice == "2": 
+        prompt = input("Enter a prompt for chatGPT: ")
+        captionString = generate_req(prompt, 500)
+        captionLength = len(captionString)
+
     # get video type from user
     videoType = input("Enter desired background video type: ")
     video = Video(videoType)
-    video.saveVideo()
+    video.saveVideo(captionLength)
 
-    # get caption string
-    captionString = reddit.main()
     # get autio file
     audioFile = textToSpeech(captionString)
 

@@ -51,11 +51,18 @@ class Video:
         self.datetimestr = self.now.strftime("%m-%d-%H:%M")
         self.filename = None
 
-    def saveVideo(self):
+    def saveVideo(self, captionLength):
         '''
         Finds video within video type and length requirements 
         and saves video to rawVideos folder
+
+        Parameters
+        ----------
+            captionLength (int): length of caption in characters
         '''
+
+        self.captionLength = captionLength
+        captionTime = self.captionLength/11.75 # convert caption length (in chars) to seconds
 
         def checkVideo():
             '''
@@ -70,7 +77,7 @@ class Video:
         
         for i in self.search.results:
             videoTitle = str(i.title)
-            if not is_age_restricted(i.watch_html) and 60 <= i.length <= 300 and not checkVideo(): # checks if video is between 1 and 5 minutes
+            if not is_age_restricted(i.watch_html) and captionTime <= i.length <= 300 and not checkVideo(): # checks if video is between 1 and 5 minutes
                 print("Found:", videoTitle) 
                 
                 # if video has not been used, download it    
@@ -100,4 +107,4 @@ class Video:
         if self.tries == 10:
             print("No video's found in lookup after 10 tries, exiting...")
             return
-        self.saveVideo()
+        self.saveVideo(captionLength)
