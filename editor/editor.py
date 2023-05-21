@@ -31,7 +31,5 @@ def captionedVideo(clipPath, captionString, audioPath):
     texts = textClipArray(captionString, partitions, audioDuration, clip.w, clip.h)
     texts.insert(0,clip)
     clip.audio = audio
-    CompositeVideoClip(texts).write_videofile(f'./video/captionedVideos/video.mp4', codec='libx264', fps=24, audio_codec='aac', logger=None)
-    return f'./video/captionedVideos/video.mp4'
-
-#captionedVideo('./rawVideos/video2.mp4', captionString, './audioFiles/textToSpeech.mp3')
+    CompositeVideoClip(texts).write_videofile(f'./video/video.mp4', codec='libx264', fps=24, audio_codec='aac', logger=None)
+    return f'./video/video.mp4'
