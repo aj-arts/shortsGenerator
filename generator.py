@@ -4,8 +4,8 @@
 from video.video import Video
 from editor.editor import captionedVideo
 from audio.audio import textToSpeech
-from chatGPT import generate_req
-import reddit.reddit as reddit
+from content.chatGPT import generate_req
+import content.reddit as reddit
 import os
 
 def main():
