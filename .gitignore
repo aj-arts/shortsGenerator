@@ -161,9 +161,8 @@ cython_debug/
 
 # Mac
 .DS_Store
-.DS_Store
-.DS_Store
 
+# ignore files
 video/captionedVideos/*.mp4
 video/rawVideos/*.mp4
 audio/audioFiles/*.mp3
