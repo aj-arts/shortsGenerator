@@ -7,7 +7,7 @@ We used Praw and the Reddit API in order to scrap subreddits for the text storie
 Similar to the video scraper, we use a blacklist to ensure that no Reddit story is used twice. If you wish to reuse reddit stories, comment out line 27 in reddit.py.
 
 ### subreddit.txt
-You can include any subreddit in this txt file and one will be randomly chosen to scrape content from.
+You can include any subreddit in this txt file and one will be randomly chosen to scrape content from. Be wary though, our current code doesn't handle other subreddits well due to the length restrictions we are placing on the posts.
 
 ## **ChatGPT**
 We used the OpenAI API in order to prompt ChatGPT with the users prompt. 
