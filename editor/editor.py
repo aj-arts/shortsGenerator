@@ -68,6 +68,7 @@ def sentencesToAudioList(words):
 
 # define a function that generates a video from captionString
 def generate_video(clipPath, captionString):
+    print("Adding captions to video...")
     clip = VideoFileClip(clipPath)
     if (clip.w > clip.h):
         clip = clip.crop(x_center=clip.w/2, y_center=clip.h/2, width=(clip.h) * 9/16, height=clip.h)
@@ -97,6 +98,5 @@ def generate_video(clipPath, captionString):
     CompositeVideoClip([clip] + captionList).write_videofile(f'./video/video.mp4', codec='libx264', fps=24, audio_codec='aac', logger=None)
     return f'./video/video.mp4'
 
-# generate_video('./video/backgroundvideo.mp4', captionStrin
-
-# print( TextClip.search('Impact-Bold','font'))
+#print(TextClip.search('Impact','font'))
+#generate_video('./video/backgroundvideo.mp4', captionString)

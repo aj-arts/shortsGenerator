@@ -82,7 +82,10 @@ class Video:
                 try:
                     print("Downloading video...")
                     try:
-                        i.streams.filter(file_extension='mp4', res='720p').first().download(filename=self.filename, output_path="./video/")
+                        if i.streams.filter(file_extension='mp4', res='1080p').first() != None: # checks if video can be downloaded in 1080p
+                            i.streams.filter(file_extension='mp4', res='1080p').first().download(filename=self.filename, output_path="./video/")
+                        else:
+                            i.streams.filter(file_extension='mp4', res='720p').first().download(filename=self.filename, output_path="./video/")
                     except Exception as e:
                         raise e
                     else:   
