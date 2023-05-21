@@ -164,5 +164,5 @@ cython_debug/
 
 # ignore files
 video/*.mp4
-video/*.mp4
+video/backgroundvideo.mp4
 audio/*.mp3

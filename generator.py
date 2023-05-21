@@ -11,18 +11,18 @@ import os
 def main():
     os.system('cls' if os.name == 'nt' else 'clear')
     print("\n\t\t\tWelcome to Shorts Generator!"
-          "\n\tThis program will generate a short video with a story of your choice."
+          "\n\tThis program will generate a short video with the content of your choice."
           "\n-------------------------------------------------------------------------------------"
           "\nCopyright (c) 2023 Colin Pannikkat, Ajinkya Gokule, Sarvesh Thiruppathi, David Gesl"
           "\n-------------------------------------------------------------------------------------\n")
     
     # get caption string
-    print("Choose whether to get a random story from AskReddit or generate a story with chatGPT.")
+    print("Choose whether to get content from AskReddit or chatGPT.")
     userChoice = input("Enter 1 for AskReddit or 2 for chatGPT: ")
     while(userChoice != "1" and userChoice != "2"):
         userChoice = input("Invalid input. Please try again: ")
     if userChoice == "1":
-        captionString = reddit.main()
+        captionString = reddit()
     elif userChoice == "2": 
         prompt = input("Enter a prompt for chatGPT: ")
         captionString = generate_req(prompt, 500)  
