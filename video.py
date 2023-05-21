@@ -2,6 +2,7 @@
 # Date: 05/21/2023
 
 from pytube import Search
+from pytube.extract import is_age_restricted
 from datetime import datetime
 
 class Video:
@@ -39,11 +40,10 @@ class Video:
         ------
             Exception: No video type specified
         '''        
-
-        if self.videoType == None:
-            raise Exception("No video type specified")
         
         self.videoType = videoType
+        if self.videoType == None or self.videoType == "":
+            raise Exception("No video type specified")
         self.usedVideos = "used_videos.txt" # file containing used videos
         self.search = Search(self.videoType) # search youtube for video type
         self.tries = 0 # number of tries to find video
@@ -70,7 +70,7 @@ class Video:
         
         for i in self.search.results:
             videoTitle = str(i.title)
-            if 30 <= i.length <= 300 and not checkVideo(): # checks if video is between 30 seconds and 5 minutes
+            if not is_age_restricted(i.watch_html) and 60 <= i.length <= 300 and not checkVideo(): # checks if video is between 1 and 5 minutes
                 print("Found:", videoTitle) 
                 
                 # if video has not been used, download it    
@@ -81,7 +81,7 @@ class Video:
                         self.filename = str(f"{videoType}_{self.datetimestr}.mp4") # create filename
                         i.streams.filter(file_extension='mp4', res='720p').first().download(filename=self.filename, output_path="./rawVideos/")
                     except Exception as e:
-                        print(str(e))
+                        raise e
                     else:   
                         print("Video downloaded successfully!")
                     # write video to used videos file
@@ -89,13 +89,13 @@ class Video:
                     usedVideos.write(i.title + "\n")
                     usedVideos.close()
                     return
-                except:
-                    print("Error downloading video, trying another...")
+                except Exception as e:
+                    print(str(e))
                     continue
             else:  
                 continue
         print("No video's found in lookup, expanding search...")
-        self.search.get_next_results()
+        self.search.get_next_results() # expand search
         self.tries += 1
         if self.tries == 10:
             print("No video's found in lookup after 10 tries, exiting...")

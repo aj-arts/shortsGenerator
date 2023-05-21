@@ -22,7 +22,7 @@ def textClipArray(captionString, partitions, audioDuration, width, height):
 
 # texts = textClipArray(captionString, partitions)
 # texts.insert(0,clip)
- # overlay the text clips onto the video
+# overlay the text clips onto the video
 # CompositeVideoClip(texts).write_videofile(f'./captionedVideos/{filename}', codec='libx264', fps=24)
 # print(TextClip.search('Bold','font'))
 # print(TextClip.list('color'))
@@ -41,4 +41,4 @@ def captionedVideo(clipPath, captionString, audioPath):
     CompositeVideoClip(texts).write_videofile(f'./captionedVideos/video1.mp4', codec='libx264', fps=24, audio_codec='aac')
     return f'./captionedVideos/video1.mp4'
 
-captionedVideo('./rawVideos/video2.mp4', captionString, './audioFiles/textToSpeech.mp3')
+#captionedVideo('./rawVideos/video2.mp4', captionString, './audioFiles/textToSpeech.mp3')
