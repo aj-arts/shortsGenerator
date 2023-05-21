@@ -163,3 +163,8 @@ cython_debug/
 .DS_Store
 .DS_Store
 .DS_Store
+
+video/captionedVideos/
+video/rawVideos/
+
+audio/audioFiles/
