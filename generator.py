@@ -19,11 +19,13 @@ def main():
     # get caption string
     print("Choose whether to get a random story from AskReddit or generate a story with chatGPT.")
     userChoice = input("Enter 1 for AskReddit or 2 for chatGPT: ")
+    while(userChoice != "1" and userChoice != "2"):
+        userChoice = input("Invalid input. Please try again: ")
     if userChoice == "1":
         captionString = reddit.main()
     elif userChoice == "2": 
         prompt = input("Enter a prompt for chatGPT: ")
-        captionString = generate_req(prompt, 500)
+        captionString = generate_req(prompt, 500)  
         
     captionLength = len(captionString)
 
