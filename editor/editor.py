@@ -55,6 +55,7 @@ def break_into_sentences(captionString):
             sentence = ""
         else:
             sentence += captionString[i]
+    # print(sentences)
 
     # for sentence in sentences:
     #     if sentence == '.' or sentences == '!' or sentences == '?':
