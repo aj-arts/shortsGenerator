@@ -116,7 +116,7 @@ We use a graveyard in order to prevent reuse of Reddit posts and YouTube videos.
 ---
 
 ## Written by:
-Sarvesh Thiruppathi - text scraping
+Sarvesh Thiruppathi Ahila - text scraping
 
 Ajinkya Gokule - video processing and captioning
 
