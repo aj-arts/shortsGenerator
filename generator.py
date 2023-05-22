@@ -38,8 +38,9 @@ def main():
                   "short soothing nature video", #1
                   "fortnite background gameplay", #2
                   "minecraft parkour background gameplay", #3
-                  "gta v car parkour background video"] #4
-        video = Video(videos[randrange(0,4)]) # looks for random background video
+                  "gta v car parkour background video", #4
+                  "csgo surf gameplay"] #5
+        video = Video(videos[randrange(0,5)]) # looks for random background video
         video.saveVideo(len(captionString)) # scrapes video from youtube
         inputVideo = "./video/" + video.filename # gets video path
         savedVideo = generate_video(inputVideo, captionString) # applies caption to video

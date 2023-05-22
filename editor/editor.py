@@ -1,7 +1,7 @@
 from moviepy.editor import *
 from gtts import gTTS
 
-# captionString = "Joe Biden and Donald Trump walk into a bar (yes, it's the start of a joke). Biden orders a beer and Trump orders a Diet Coke. They start arguing about whose drink choice is better for the economy. The bartender interrupts and says, \"Gentlemen, your drinks are on the house, just please stop arguing.\" Biden turns to Trump and says, \"See, that's how you get things done without bankrupting a business.\" Trump replies, \"I'm a billionaire, I don't need to worry about that.\" Biden laughs and says, \"You know, it's funny. We may disagree on politics, but we still agree on the important stuff - free drinks.\" They clink glasses and continue drinking in peace."
+captionString = "Joe Biden and Donald... Trump walk into a bar (yes, it's the start of a joke). Biden orders a beer and Trump orders a Diet Coke. They start arguing about whose drink choice is better for the economy. The bartender interrupts and says, \"Gentlemen, your drinks are on the house, just please stop arguing.\" Biden turns to Trump and says, \"See, that's how you get things done without bankrupting a business.\" Trump replies, \"I'm a billionaire, I don't need to worry about that.\" Biden laughs and says, \"You know, it's funny. We may disagree on politics, but we still agree on the important stuff - free drinks.\" They clink glasses and continue drinking in peace."
 
 # def textClipArray(captionString, partitions, audioDuration, width, height):
 #     textClipArray = []
@@ -55,15 +55,24 @@ def break_into_sentences(captionString):
             sentence = ""
         else:
             sentence += captionString[i]
+    print(sentences)
+    print("\nRemoving ur mom")
+    for i in range(len(sentences)):
+        print(sentences[i], "\n")
+        if sentences[i] == ".":
+            sentences.pop(i)
+    print(sentences)
     return sentences
-
 
 # define a function that takes in a list of words converts them to speech and returns a list of audio clips
 def sentencesToAudioList(words):
     audio_clips = []
     for i in range(len(words)):
-        gTTS(text=words[i], lang='en').save(f'./audio/{i}.mp3')
-        audio_clips.append(AudioFileClip(f'./audio/{i}.mp3').fx(vfx.speedx, 1.3))
+        try:
+            gTTS(text=words[i], lang='en').save(f'./audio/{i}.mp3')
+            audio_clips.append(AudioFileClip(f'./audio/{i}.mp3').fx(vfx.speedx, 1.3))
+        except Exception as e:
+            print(str(e), "Error in generating audio with", words[i])
     return audio_clips
 
 # define a function that generates a video from captionString
