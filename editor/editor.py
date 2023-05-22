@@ -104,7 +104,7 @@ def generate_video(clipPath, captionString):
     combinedAudio = CompositeAudioClip(audioList)
     clip.audio = combinedAudio
     clip = clip.subclip(0, totalDuration)
-    CompositeVideoClip([clip] + captionList).write_videofile(f'./video/video.mp4', codec='libx264', fps=24, audio_codec='mp3', logger=None)
+    CompositeVideoClip([clip] + captionList).write_videofile(f'./video/video.mp4', codec='libx264', fps=24, audio_codec='aac', logger=None)
     return f'./video/video.mp4'
 
 #print(TextClip.search('Impact','font'))
