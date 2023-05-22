@@ -1,4 +1,4 @@
-# Copyright (c) 2023 Colin Pannikkat, Ajinkya Gokule, Sarvesh Thiruppathi, David Gesl
+# Copyright (c) 2023 Colin Pannikkat, Ajinkya Gokule, Sarvesh Thiruppathi Ahila, David Gesl
 # Shorts Generator
 
 from video.video import Video
@@ -13,7 +13,7 @@ def main():
     print("\n\t\t\tWelcome to Shorts Generator!"
           "\n\tThis program will generate a short video with the content of your choice."
           "\n-------------------------------------------------------------------------------------"
-          "\nCopyright (c) 2023 Colin Pannikkat, Ajinkya Gokule, Sarvesh Thiruppathi, David Gesl"
+          "\nCopyright (c) 2023 Colin Pannikkat, Ajinkya Gokule, Sarvesh Thiruppathi Ahila, David Gesl"
           "\n-------------------------------------------------------------------------------------\n")
     
     # get caption string
