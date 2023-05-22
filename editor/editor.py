@@ -1,7 +1,7 @@
 from moviepy.editor import *
 from gtts import gTTS
 
-captionString = "Joe Biden and Donald... Trump walk into a bar (yes, it's the start of a joke). Biden orders a beer and Trump orders a Diet Coke. They start arguing about whose drink choice is better for the economy. The bartender interrupts and says, \"Gentlemen, your drinks are on the house, just please stop arguing.\" Biden turns to Trump and says, \"See, that's how you get things done without bankrupting a business.\" Trump replies, \"I'm a billionaire, I don't need to worry about that.\" Biden laughs and says, \"You know, it's funny. We may disagree on politics, but we still agree on the important stuff - free drinks.\" They clink glasses and continue drinking in peace."
+#captionString = "Joe Biden and Donald... Trump walk into a bar (yes, it's the start of a joke). Biden orders a beer and Trump orders a Diet Coke. They start arguing about whose drink choice is better for the economy. The bartender interrupts and says, \"Gentlemen, your drinks are on the house, just please stop arguing.\" Biden turns to Trump and says, \"See, that's how you get things done without bankrupting a business.\" Trump replies, \"I'm a billionaire, I don't need to worry about that.\" Biden laughs and says, \"You know, it's funny. We may disagree on politics, but we still agree on the important stuff - free drinks.\" They clink glasses and continue drinking in peace."
 
 # def textClipArray(captionString, partitions, audioDuration, width, height):
 #     textClipArray = []
@@ -55,7 +55,6 @@ def break_into_sentences(captionString):
             sentence = ""
         else:
             sentence += captionString[i]
-    print(sentences)
 
     # for sentence in sentences:
     #     if sentence == '.' or sentences == '!' or sentences == '?':
