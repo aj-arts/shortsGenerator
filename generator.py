@@ -3,11 +3,10 @@
 
 from video.video import Video
 from editor.editor import generate_video
-from audio.audio import textToSpeech
 from content.chatGPT import generate_req
 from content.reddit import main as reddit
-import os
 from random import randrange
+import os
 
 def main():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -35,7 +34,12 @@ def main():
                    "Generate a random story under 150 words", #2
                    "Explain some mathematical concept under 150 words"] #3
         captionString = generate_req(prompts[randrange(0,3)], 200) # randomly generates a reddit story
-        video = Video("background gameplay video") # looks for general background video
+        videos = ["subway surfer background gameplay", #0
+                  "asmr background video", #1
+                  "fortnite background gameplay", #2
+                  "minecraft parkour background gameplay", #3
+                  "gta v car parkour background video"] #4
+        video = Video(videos[randrange(0,4)]) # looks for random background video
         video.saveVideo(len(captionString)) # scrapes video from youtube
         inputVideo = "./video/" + video.filename # gets video path
         savedVideo = generate_video(inputVideo, captionString) # applies caption to video
@@ -46,9 +50,6 @@ def main():
     videoType = input("Enter desired background video type: ")
     video = Video(videoType)
     video.saveVideo(len(captionString))
-
-    # get autio file
-    # audioFile = textToSpeech(captionString)
 
     # apply caption to video
     inputVideo = "./video/" + video.filename
