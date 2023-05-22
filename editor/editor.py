@@ -49,19 +49,19 @@ def break_into_sentences(captionString):
     sentences = []
     sentence = ""
     for i in range(len(captionString)):
-        if captionString[i] == "..." or captionString[i] == ".." or captionString[i] == "?" or captionString[i] == "!" or captionString[i]==".":
+        if captionString[i] == "?" or captionString[i] == "!" or captionString[i]==".":
             sentence += captionString[i]
             sentences.append(sentence)
             sentence = ""
         else:
             sentence += captionString[i]
     print(sentences)
-    print("\nRemoving ur mom")
-    for i in range(len(sentences)):
-        print(sentences[i], "\n")
-        if sentences[i] == ".":
-            sentences.pop(i)
-    print(sentences)
+
+    # for sentence in sentences:
+    #     if sentence == '.' or sentences == '!' or sentences == '?':
+    #         sentences.remove(sentence)
+    # print(sentences)
+
     return sentences
 
 # define a function that takes in a list of words converts them to speech and returns a list of audio clips
@@ -82,7 +82,7 @@ def generate_video(clipPath, captionString):
     if (clip.w > clip.h):
         clip = clip.crop(x_center=clip.w/2, y_center=clip.h/2, width=(clip.h) * 9/16, height=clip.h)
     captionList = break_into_sentences(captionString)
-    audioList = sentencesToAudioList(break_into_sentences(captionString))
+    audioList = sentencesToAudioList(captionList)
     totalDuration = 0
     for i in range(len(captionList)):
         audioList[i] = audioList[i].set_start(totalDuration)
