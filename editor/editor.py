@@ -49,7 +49,7 @@ def break_into_sentences(captionString):
     sentences = []
     sentence = ""
     for i in range(len(captionString)):
-        if captionString[i] == "." or captionString[i] == "?" or captionString[i] == "!":
+        if captionString[i] == "..." or captionString[i] == ".." or captionString[i] == "?" or captionString[i] == "!" or captionString[i]==".":
             sentence += captionString[i]
             sentences.append(sentence)
             sentence = ""
@@ -100,3 +100,4 @@ def generate_video(clipPath, captionString):
 
 #print(TextClip.search('Impact','font'))
 #generate_video('./video/backgroundvideo.mp4', captionString)
+gTTS(text=".", lang='en').save(f"./audio/0.mp3")
