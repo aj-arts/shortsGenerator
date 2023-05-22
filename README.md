@@ -125,4 +125,4 @@ David Gesl - text to speech
 Colin Pannikkat - video scraping, documentation
 
 ---
-Copyright (c) 2023 Colin Pannikkat, Ajinkya Gokule, Sarvesh Thiruppathi, David Gesl
+Copyright (c) 2023 Colin Pannikkat, Ajinkya Gokule, Sarvesh Thiruppathi Ahila, David Gesl
