@@ -109,8 +109,7 @@ We use a graveyard in order to prevent reuse of Reddit posts and YouTube videos.
 
 ## Future improvements
 
-- [ ] Prevent words from Reddit stories from splitting in captions - better text timing
-- [ ] Work towards integration with multiple media platforms
+- [ ] Work towards integration with uploading to multiple media platforms - Youtube, Tiktok, Instagram
 - [ ] Provide more customizability for video options
 - [ ] Improve TTS engine to be more realistic
 
