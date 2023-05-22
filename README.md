@@ -2,7 +2,7 @@
 
 This tool will automatically generate short form content in the form of text-based stories spoken over stimulating background videos.
 
-https://github.com/aj-arts/shortsGenerator/assets/19521833/38c60bfa-942d-4654-bb25-89f6115a0540
+https://github.com/aj-arts/shortsGenerator/assets/19521833/2c63d41a-96c5-4408-ae4f-09630034793f
 
 ## Installation Instructions
 
