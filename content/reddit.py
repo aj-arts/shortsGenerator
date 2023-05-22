@@ -41,7 +41,7 @@ def main():
                 length += len(comment.body.split())
                 if(length <= 130):
                   content += "\n\n" + comment.body
-                  
+        print("Found comments")          
         return content
   else:
     #Get top posts
@@ -54,6 +54,7 @@ def main():
       if (len(content.split()) <= 150 and len(post.selftext.split()) >= 50 and post.over_18  == False and not(search_string_in_file("content/blacklist_links.txt",post.permalink))):
 
         add_string_to_file("content/blacklist_links.txt",post.permalink)
+        print("Found content")
         return content
 
 

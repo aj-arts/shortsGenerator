@@ -35,7 +35,7 @@ def main():
                    "Explain some mathematical concept under 150 words"] #3
         captionString = generate_req(prompts[randrange(0,3)], 200) # randomly generates a reddit story
         videos = ["subway surfer background gameplay", #0
-                  "asmr background video", #1
+                  "short soothing nature video", #1
                   "fortnite background gameplay", #2
                   "minecraft parkour background gameplay", #3
                   "gta v car parkour background video"] #4
