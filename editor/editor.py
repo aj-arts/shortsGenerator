@@ -1,7 +1,7 @@
 from moviepy.editor import *
 from gtts import gTTS
 
-#captionString = "Joe Biden and Donald... Trump walk into a bar (yes, it's the start of a joke). Biden orders a beer and Trump orders a Diet Coke. They start arguing about whose drink choice is better for the economy. The bartender interrupts and says, \"Gentlemen, your drinks are on the house, just please stop arguing.\" Biden turns to Trump and says, \"See, that's how you get things done without bankrupting a business.\" Trump replies, \"I'm a billionaire, I don't need to worry about that.\" Biden laughs and says, \"You know, it's funny. We may disagree on politics, but we still agree on the important stuff - free drinks.\" They clink glasses and continue drinking in peace."
+captionString = "Hey there, remember those epic videos that hooked you in? The ones where a snappy bot read out the juiciest Reddit recaps, while jaw-dropping Minecraft parkour unfolded in the background? Admit it, you had no reason to watch, but you couldn't tear your eyes away. Well, get ready for this mind-blowing revelation: brace yourself, because those videos were probably whipped up by AI. Yeah, you heard me right! Even my voice chatting with you right now? AI-generated. The captions you're devouring? AI-generated. And get this, the entire video was scraped right off the internet, all thanks to AI, without any human intervention whatsoever. Isn't that mind-blowing? I mean, c'mon, I had your undivided attention from start to finish. Keep watching to find out how we did it."
 
 # def textClipArray(captionString, partitions, audioDuration, width, height):
 #     textClipArray = []
@@ -104,8 +104,8 @@ def generate_video(clipPath, captionString):
     combinedAudio = CompositeAudioClip(audioList)
     clip.audio = combinedAudio
     clip = clip.subclip(0, totalDuration)
-    CompositeVideoClip([clip] + captionList).write_videofile(f'./video/video.mp4', codec='libx264', fps=24, audio_codec='aac', logger=None)
+    CompositeVideoClip([clip] + captionList).write_videofile(f'./video/video.mp4', codec='mpeg4', fps=24, audio_codec='aac', logger=None)
     return f'./video/video.mp4'
 
 #print(TextClip.search('Impact','font'))
-#generate_video('./video/backgroundvideo.mp4', captionString)
+# generate_video('./video/backgroundvideo.mp4', captionString)
