@@ -3,7 +3,6 @@
 
 from pytube import Search
 from pytube.extract import is_age_restricted
-from datetime import datetime
 
 class Video:
     '''
