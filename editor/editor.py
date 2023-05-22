@@ -55,13 +55,10 @@ def break_into_sentences(captionString):
             sentence = ""
         else:
             sentence += captionString[i]
-    print(sentences)
-    print("\nRemoving ur mom")
     for i in range(len(sentences)):
         print(sentences[i], "\n")
         if sentences[i] == ".":
             sentences.pop(i)
-    print(sentences)
     return sentences
 
 # define a function that takes in a list of words converts them to speech and returns a list of audio clips
