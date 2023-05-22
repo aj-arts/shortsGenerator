@@ -100,4 +100,3 @@ def generate_video(clipPath, captionString):
 
 #print(TextClip.search('Impact','font'))
 #generate_video('./video/backgroundvideo.mp4', captionString)
-gTTS(text=".", lang='en').save(f"./audio/0.mp3")
