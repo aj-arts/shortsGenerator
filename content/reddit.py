@@ -40,8 +40,8 @@ def main():
               if (len(comment.body.split()) <= 35 and comment.body != "[deleted]" and comment.body != "[removed]"):
                 length += len(comment.body.split())
                 if(length <= 130):
-                  content += "\n\n" + comment.body
-        print("Found comments")          
+                  content += "\n" + comment.body
+                  
         return content
   else:
     #Get top posts
@@ -50,7 +50,7 @@ def main():
     #Search for SFW post with size > 50 and < 150 words which hasn't been generated before
     print("Tring to find a suitable post from " + sub_name)
     for post in top_posts:
-      content = post.title + "\n\n" + post.selftext
+      content = post.title + "\n" + post.selftext
       if (len(content.split()) <= 150 and len(post.selftext.split()) >= 50 and post.over_18  == False and not(search_string_in_file("content/blacklist_links.txt",post.permalink))):
 
         add_string_to_file("content/blacklist_links.txt",post.permalink)
