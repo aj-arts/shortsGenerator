@@ -75,7 +75,7 @@ class Video:
         
         for i in self.search.results:
             videoTitle = str(i.title)
-            if not is_age_restricted(i.watch_html) and captionTime <= i.length <= 300 and not checkVideo(): # checks if video is between 1 and 5 minutes
+            if not(is_age_restricted(i.watch_html)) and (captionTime <= i.length <= 300) and not(checkVideo()): # checks if video is between 1 and 5 minutes
                 print("Found:", videoTitle) 
                 
                 # if video has not been used, download it    
