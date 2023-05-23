@@ -12,9 +12,9 @@ def main():
     os.system('cls' if os.name == 'nt' else 'clear')
     print("\n\t\t\t\tWelcome to Shorts Generator!"
           "\n\tThis program will generate a short video with the content of your choice."
-          "\n-------------------------------------------------------------------------------------"
+          "\n-----------------------------------------------------------------------------------------"
           "\nCopyright (c) 2023 Colin Pannikkat, Ajinkya Gokule, Sarvesh Thiruppathi Ahila, David Gesl"
-          "\n-------------------------------------------------------------------------------------\n")
+          "\n-----------------------------------------------------------------------------------------\n")
     
     # get caption string
     userChoice = input("Choose where to get content from:"
