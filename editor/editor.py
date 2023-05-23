@@ -1,7 +1,7 @@
 from moviepy.editor import *
 from gtts import gTTS
 
-captionString = "Hey there, remember those epic videos that hooked you in? The ones where a snappy bot read out the juiciest Reddit recaps, while jaw-dropping Minecraft parkour unfolded in the background? Admit it, you had no reason to watch, but you couldn't tear your eyes away. Well, get ready for this mind-blowing revelation: brace yourself, because those videos were probably whipped up by AI. Yeah, you heard me right! Even my voice chatting with you right now? AI-generated. The captions you're devouring? AI-generated. And get this, the entire video was scraped right off the internet, all thanks to AI, without any human intervention whatsoever. Isn't that mind-blowing? I mean, c'mon, I had your undivided attention from start to finish. Keep watching to find out how we did it."
+# captionString = "Hey there, remember those epic videos that hooked you in? The ones where a snappy bot read out the juiciest Reddit recaps, while jaw-dropping Minecraft parkour unfolded in the background? Admit it, you had no reason to watch, but you couldn't tear your eyes away. Well, those videos were probably whipped up by AI. Yeah, you heard me right! Even my voice chatting with you right now? Google Text to Speech. The captions you're devouring? AI-generated. And get this, the entire video was scraped right off the internet, without any human intervention whatsoever. Isn't that mind-blowing? I mean, c'mon, I had your undivided attention from start to finish. Keep watching to find out how we did it, in an actual human's voice."
 
 # def textClipArray(captionString, partitions, audioDuration, width, height):
 #     textClipArray = []
